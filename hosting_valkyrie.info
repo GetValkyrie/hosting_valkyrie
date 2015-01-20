@@ -1,0 +1,6 @@
+name = Hosting Valkyrie
+description = Aegir front-end customizations for Valkyrie
+package = Hosting
+core = 7.x
+
+dependencies[] = hosting_site

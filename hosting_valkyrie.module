@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file Aegir and Drupal hooks.
+ */
+
+/**
+ * Implements hook_allow_domain().
+ *
+ * Ref.: https://github.com/GetValkyrie/valkyrie/commit/da8c909
+ */
+function hosting_valkyrie_allow_domain($url, $params) {
+  form_set_error('title', t("The domain name must contain a period (.)."));
+  return strpos($url, '.');
+}
