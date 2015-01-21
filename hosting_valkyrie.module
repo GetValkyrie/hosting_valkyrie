@@ -10,6 +10,11 @@
  * Ref.: https://github.com/GetValkyrie/valkyrie/commit/da8c909
  */
 function hosting_valkyrie_allow_domain($url, $params) {
-  form_set_error('title', t("The domain name must contain a period (.)."));
-  return strpos($url, '.');
+  if (strpos($url, '.') === FALSE) {
+    form_set_error('title', t("The domain name must contain a period (.)."));
+    return FALSE;
+  }
+  else {
+    return TRUE;
+  }
 }
